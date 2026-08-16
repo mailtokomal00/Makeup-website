@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxe Beauty | Premium Editorial Cosmetics</title>
+  <meta name="description" content="Elevate your natural glow with organic, high-performance luxury makeup and skincare formulations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="logo">LUXE BEAUTY</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <div class="cart-btn" id="cartBtn">
+      <span>🛒 BAG</span> (<span id="cartCount">0</span>)
+    </div>
+  </nav>
+
+  <!-- Main Editorial Hero Section (Inspired by Reference Design) -->
+  <section class="hero-editorial" id="hero">
+    <div class="hero-wrapper">
+      
+      <!-- Left Column: Editorial Headline & CTA -->
+      <div class="hero-left">
+        <h1 class="hero-title">
+          YOUR BEAUTY<br />
+          IN HARMONY<br />
+          WITH ELEGANCE
+        </h1>
+        <div class="hero-cta-group">
+          <a href="#products" class="btn-start" id="heroStartBtn">START</a>
+          <p class="cta-subtitle">
+            Get exclusive offers, new product releases and more
+          </p>
+        </div>
+      </div>
+
+      <!-- Center Column: Makeup Model Portrait with Spinning Text Badge & Controls -->
+      <div class="hero-center">
+        <!-- Spinning Circular Text Badge -->
+        <div class="badge-circle-wrap">
+          <svg viewBox="0 0 200 200" class="badge-svg">
+            <path id="textPath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" fill="none" />
+            <text class="badge-text">
+              <textPath href="#textPath" startOffset="0%">
+                • LUXURY COSMETICS • GLOW FORMULA • PURE RADIANCE DISCOVERY
+              </textPath>
+            </text>
+          </svg>
+        </div>
+
+        <!-- Makeup Model Image Container -->
+        <div class="model-image-container">
+          <img src="images/model_face.png" alt="Luxe Beauty Makeup Model" id="modelImage" class="model-img" />
+        </div>
+
+        <!-- Interactive Vertical Slider Control -->
+        <div class="model-controls">
+          <button class="control-arrow" id="prevLookBtn" title="Previous Look">↑</button>
+          <button class="control-arrow" id="nextLookBtn" title="Next Look">↓</button>
+        </div>
+        
+        <!-- Active Look Label -->
+        <div class="look-tag" id="lookTag">LOOK 01 • RADIANT NUDE GLOW</div>
+      </div>
+
+      <!-- Right Column: Angled "Product of the Day" Showcase -->
+      <div class="hero-right">
+        <div class="product-day-card">
+          <div class="product-day-header">
+            <span class="badge-tag">PRODUCT OF THE DAY</span>
+          </div>
+
+          <div class="product-day-items">
+            <!-- Product Item 1 -->
+            <div class="mini-product-item">
+              <div class="mini-img-wrap">
+                <img src="images/product_day.png" alt="Activist Glow Elixir" />
+              </div>
+              <div class="mini-info">
+                <h4>ACTIVIST</h4>
+                <p>Radiance Elixir Serum</p>
+                <span class="price">$36.00</span>
+                <button class="btn-mini-add" onclick="addToCart('ACTIVIST Radiance Elixir')">+ Add to Bag</button>
+              </div>
+            </div>
+
+            <!-- Product Item 2 -->
+            <div class="mini-product-item">
+              <div class="mini-img-wrap">
+                <img src="images/care_serum.png" alt="Activist Botanical Nectar" />
+              </div>
+              <div class="mini-info">
+                <h4>ACTIVIST</h4>
+                <p>Botanical Honey Oil</p>
+                <span class="price">$32.00</span>
+                <button class="btn-mini-add" onclick="addToCart('ACTIVIST Botanical Honey Oil')">+ Add to Bag</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Categories Grid Section (Matching Bottom Row of Reference Image) -->
+  <section class="categories-section" id="categories">
+    <div class="categories-grid">
+      
+      <!-- Category 1: Soft Blush Pink -->
+      <div class="category-card card-pink">
+        <span class="category-label">CARE PRODUCTS</span>
+        <div class="category-img-box">
+          <img src="images/care_serum.png" alt="Care Products - Hydrating Serum" />
+        </div>
+        <a href="#products" class="category-link">Explore Care →</a>
+      </div>
+
+      <!-- Category 2: Soft Mint Sage -->
+      <div class="category-card card-green">
+        <span class="category-label">GLOW FORMULAS</span>
+        <div class="category-img-box">
+          <img src="images/cream_jar.png" alt="Glow Formulas - Face Cream" />
+        </div>
+        <a href="#products" class="category-link">Explore Glow →</a>
+      </div>
+
+      <!-- Category 3: Warm Soft Butter -->
+      <div class="category-card card-yellow">
+        <span class="category-label">LIP & EYE CARE</span>
+        <div class="category-img-box">
+          <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=500&q=80" alt="Lip and Eye Care" />
+        </div>
+        <a href="#products" class="category-link">Explore Colors →</a>
+      </div>
+
+      <!-- Category 4 / Stat Highlight Section -->
+      <div class="stat-highlight-card">
+        <div class="stat-number">99<span class="percent">%</span></div>
+        <h3 class="stat-title">Natural Care</h3>
+        <p class="stat-desc">
+          We believe in natural, organic & high-performance beauty formulations for flawless radiant skin.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Full Products Collection Section -->
+  <section class="products-section" id="products">
+    <div class="section-header">
+      <span class="sub-heading">CURATED BEAUTY</span>
+      <h2>Featured Collection</h2>
+    </div>
+
+    <div class="product-grid">
+
+      <!-- Product 1 -->
+      <div class="product-card">
+        <div class="card-badge">BESTSELLER</div>
+        <img src="images/product_day.png" alt="Activist Glow Elixir">
+        <h3>ACTIVIST Radiance Serum</h3>
+        <p class="price">$36.00</p>
+        <button class="add-to-cart" onclick="addToCart('ACTIVIST Radiance Serum')">Add to Bag</button>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <img src="images/care_serum.png" alt="Botanical Hydra Serum">
+        <h3>Botanical Hydra Serum</h3>
+        <p class="price">$34.00</p>
+        <button class="add-to-cart" onclick="addToCart('Botanical Hydra Serum')">Add to Bag</button>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <img src="images/cream_jar.png" alt="Rejuvenating Silk Cream">
+        <h3>Rejuvenating Silk Cream</h3>
+        <p class="price">$48.00</p>
+        <button class="add-to-cart" onclick="addToCart('Rejuvenating Silk Cream')">Add to Bag</button>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=500&q=80" alt="Velvet Matte Lipstick">
+        <h3>Velvet Matte Lipstick</h3>
+        <p class="price">$24.00</p>
+        <button class="add-to-cart" onclick="addToCart('Velvet Matte Lipstick')">Add to Bag</button>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card">
+        <img src="images/foundation.png" alt="Hydrating Glow Foundation">
+        <h3>Hydrating Glow Foundation</h3>
+        <p class="price">$38.00</p>
+        <button class="add-to-cart" onclick="addToCart('Hydrating Glow Foundation')">Add to Bag</button>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product-card">
+        <img src="images/eyeshadow.png" alt="Rose Gold Eyeshadow Palette">
+        <h3>Rose Gold Eyeshadow Palette</h3>
+        <p class="price">$42.00</p>
+        <button class="add-to-cart" onclick="addToCart('Rose Gold Eyeshadow Palette')">Add to Bag</button>
+      </div>
+
+      <!-- Product 7 -->
+      <div class="product-card">
+        <img src="images/blush.png" alt="Silk Soft Powder Blush">
+        <h3>Silk Soft Powder Blush</h3>
+        <p class="price">$22.00</p>
+        <button class="add-to-cart" onclick="addToCart('Silk Soft Powder Blush')">Add to Bag</button>
+      </div>
+
+      <!-- Product 8 -->
+      <div class="product-card">
+        <img src="https://www.boddess.com/pub/media/catalog/product/cache/72fde2a7ccdbeabc3e60b050b4dcfb22/a/b/abh01-21430-1_fjcief15jhflkhhb.jpg" alt="Precision Liquid Eyeliner">
+        <h3>Precision Liquid Eyeliner</h3>
+        <p class="price">$20.00</p>
+        <button class="add-to-cart" onclick="addToCart('Precision Liquid Eyeliner')">Add to Bag</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About / Brand Philosophy Section -->
+  <section class="about-section" id="about">
+    <div class="about-content">
+      <span class="sub-heading">OUR PHILOSOPHY</span>
+      <h2>Crafted For Your Natural Radiance</h2>
+      <p>
+        LUXE BEAUTY combines high-purity botanical extracts, organic oils, and advanced dermatological science to accentuate your unique features without compromising on skin health.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">LUXE BEAUTY</div>
+      <p>&copy; 2026 LUXE BEAUTY. All rights reserved. Designed with elegance & care.</p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
